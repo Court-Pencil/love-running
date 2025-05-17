@@ -4,7 +4,7 @@
 
 /* asterisk wildcard selector to override default styles added by the browser */
 *{
-    padding:0;
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
@@ -12,8 +12,8 @@
 /* general styles */
 body{
     min-height: 100vh;
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
     /* generic project styles */
     color: #3a3a3a;
     font-family: 'lato', sans-serif; 
@@ -22,7 +22,7 @@ body{
 
 header{
     background-color: #ffffff;
-    padding: 0;
+    padding: 0 1rem;
     position: fixed;
     z-index: 99;
     width: 100%;
@@ -30,6 +30,11 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit
 }
 
 h1{
@@ -40,9 +45,9 @@ h1{
 }
 
 #menu{
-      letter-spacing: 4px;
       font-size: 110%;
-      list-style-type: none ;
+      letter-spacing: 4px;
+      list-style-type: none;
 }
 
 #menu > li {
@@ -59,9 +64,9 @@ nav {
     position: absolute;
     background-color: #ffffff;
     width: 100%;
-    left:0;
-    box-shadow: 0 2px 2px #3a3a3a;
+    left: 0;
     padding-top: 0 1em;
+    box-shadow: 0 2px 2px #3a3a3a;
     display: none;
     top: 100%;
 
@@ -77,12 +82,50 @@ nav {
     display: none;
 }
 
+.nav-toggle-label{
+    font-size: 2rem;
+}
+
 main{
     background-color: lightblue;
     /* make main element take up any surplus space to push footer down  */
     flex:1 0 auto;
+    margin-top: 47px;
 }
 
-footer{
-      background-color: orange;
+#social-networks {
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+#social-networks > i {
+    font-size: 160%;
+    padding: 5%;
+    color: #3a3a3a;
+}
+
+/* media query for tablets and larger (768px and up) */
+@media screen and (min-width: 768px) {
+    /* header */
+    nav {
+        display: block;
+        position: relative;
+        box-shadow: none;
+        width: fit-content;
+        padding-right: 1rem;
+    }
+    #menu {
+        display: flex;
+    }
+
+    #menu > li {
+        padding-left: 1rem;
+    }
+
+    .nav-toggle-label {
+        display: none;
+    }
 }
